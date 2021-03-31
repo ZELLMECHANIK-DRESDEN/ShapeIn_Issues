@@ -1,0 +1,92 @@
+ShapeIn 2 Release Notes / Change Log
+(c) ZELLMECHANIK DRESDEN GmbH 2020
+Tatzberg 47
+01307 Dresden
+
+2.2.2.4 2021/03/31
+- fix: timed measurement were stopped immediately
+- sort list of lasers by wavelength
+- fix: active laser count inconsistent (github: #2)
+- add: #65 fl. baseline offset to hdf5 meta data
+
+2.2.2.3 2021/03/18
+- fix: CellCarrier was not written to hdf5 meta data if selected (github: #3)
+- enh: read more information about pump failure and show in error messages
+
+2.2.2.1 2021/02/12
+- fix: pump communication issues
+  Change QMix SDK Version back to QmixSDK-64bit_v20181121
+
+2.2.2.0 2020/12/10
+- fix: #54 default settings were not loaded for gates
+- fix: #55 acquisition was canceled on interlock in overview mode
+- fix: buffer under runs with fluorescence at low frame rates
+
+2.2.1.0
+- fix: #50 Max. time gate setting was not working
+- change maintenance settings to new tree-view
+- change gating settings to dynamic tree-view
+- add brightness, brightness SD, position and fl-width to gate-able items
+- syringe level is updated during calibration
+- change structure of UI and controller for more responsive UX
+- fix: coloring of plots if one non-fluorescence parameter is selected
+- between automation steps overview mode is shown
+- fix: do never overwrite hdf5 files, warning
+- for each run a log file with timestamp is created. Keep the last 50 logs
+- threading stability of logging improved
+- write NaN instead of inf to data files (#23)
+- medium name can be changed in UI to custom string (github: #1)
+- library updates: Qwt-6.1.5, HDF5-1.10.6, QmixSDK_MSVC_20200422, Qt-5.12.3, zmq-4.6.0
+- with setting "MaintenanceD/storeImgName" a custom name for image dataset can be chosen (#24)
+- setting "MaintenanceD/storeBgImg" a dataset for the background images can be saved (#22)
+
+2.1.2
+- fix: Sample name in HDF5 file should be all-lower-case (#17)
+- fix: Wrong name for deformation feature "def"/"deform" (#12)
+
+2.1.1	2019/12/11
+- fix: Corrected calculation of aspect ratio (now float and not integer) (#5)
+
+2.1.0	2019/11/11
+- new plotting system: During the measurement the user can create and modify up to 9 plots that are updated in real-time
+- new measurement automation: define a multiple flow rates that are then measured on after another with specified waiting times for settling of flow
+- change area value: Now the area in units of [um^2] is saved
+- width of peaks is now determined with sub-sample accuracy
+- reset camera before each measurement: fixes FPN correction imaging problems
+- number of points shown in plots can be changed as a setting
+- for FL channels an offset can be defined to correct variations in amplifiers
+- improve handling of laser status
+- interrupt measurement if camera is disconnected
+- repair installer: Now desktop icon is created without an error
+- move to OpenCv 4.1, HDF5 1.10.5, QT 5.13.
+
+2.0.8	2019/05/21
+ - repaired aspect ratio (allow also non integer numbers)
+ - make sorting options visible in maintenance tab
+
+2.0.7	2019/03/11
+ - Check storage space, stop at 3 GB or less
+
+2.0.6	2019/02/08
+ - put sorting options to Maintenance dark menu
+ - clear queues between measurements
+
+2.0.5	2018/06/11
+ - added check for non-ascii characters in path, deny measurement if found
+ - use HDF5 data format?
+ - synchronization problem for hour long measurements solved (double precision)
+ - include USB thermometer support 
+
+2.0.4	2017/12/20
+ - use signaling for "writer done" to remove possible access violations
+ - move closing of files in writer from destructor to stop writing
+ - disable stop and tab buttons during hardware initialization
+ - minor rearrangement of "stop signal given" flags
+ - store pump positions at every start/stop
+
+
+2.0.0	2017/07/28
+ - New QT based C++ version of ShapeIn
+ - Faster processing than in older LabView software
+ - Save .tdms files with data
+ - Pump control integrated
