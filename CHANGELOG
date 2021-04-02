@@ -3,11 +3,12 @@ ShapeIn 2 Release Notes / Change Log
 Tatzberg 47
 01307 Dresden
 
-2.2.2.4 2021/03/31
+2.2.2.4 2021/04/01
 - fix: timed measurement were stopped immediately
 - sort list of lasers by wavelength
 - fix: active laser count inconsistent (github: #2)
-- add: #65 fl. baseline offset to hdf5 meta data
+- fix: attribute "online_filter:target duration" now stored in unit [min] as specified (#71)
+- fix: hide attribute "setup: chip identifier" if empty (#72, github #4)
 
 2.2.2.3 2021/03/18
 - fix: CellCarrier was not written to hdf5 meta data if selected (github: #3)
